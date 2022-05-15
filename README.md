@@ -1,6 +1,5 @@
 # Prodos-512kB-NVRAM-Drive
 A card with 512kB NVRAM for Apple // compatible computers which is a ProDOS compliant R/W device.
-A card for Apple // computers with 512kB NVRAM A periferal card for Apple //.
 This is a project based on my NVRAM card which is intended to work with NVRAM chip 39SF040 and compatible.
 The NVRAM is organized in 256 banks of 2kB each, numbered #00 to #FF Banks are selected by writing a byte (#00 - #FF) into $C0Nx, where N = 8 + [slot number].
 When writing to $C0Nx at the same time the NVRAM chip is also enabled. When a bank is selected, its contents are seen in the address space $C800-$CFFF.
