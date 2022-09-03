@@ -11,7 +11,7 @@ The bootloader can also be seen at addresses $CF00-$CFFF of bank #FF.
 The image contains a ProDOS volume which is loaded by the boot loader. Additional firmware resdes in ProDOS Block $01.
 Recommended installation is on Slot 7. The boot loader has functionality that it captures the boot sequence of the computer and loads ProDOS.
 
-Copyright (c) 2021 Ralle Palaveev
+Copyright (c) 2022 Ralle Palaveev
 All rights reserved.
 
 Redistribution and use in source, binary, and manufactued forms, with or without
