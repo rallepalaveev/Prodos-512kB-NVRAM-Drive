@@ -1,4 +1,4 @@
-/** V2.4 and abov **/
+/** HW versions 2.4 and 2.5 **/
 PIN 1 = IOSelect;
 PIN 2 = A8;
 PIN 3 = A9;
