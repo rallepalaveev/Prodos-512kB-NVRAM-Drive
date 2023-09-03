@@ -1,13 +1,3 @@
-/** HW versions 2.4 and 2.5 **/
-Name     NVRAM25;
-PartNo   00;
-Date     27/12/2022;
-Revision 01;
-Designer R.Palaveev;
-Company  RP;
-Assembly None;
-Location None;
-Device   g22v10;
 PIN 1 = IOSelect;
 PIN 2 = A8;
 PIN 3 = A9;
