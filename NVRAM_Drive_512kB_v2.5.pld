@@ -1,3 +1,15 @@
+Name     NVRAM25;
+PartNo   00;
+Date     27/12/2022;
+Revision 01;
+Designer R.Palaveev;
+Company  Cltch;
+Assembly None;
+Location None;
+Device   g22v10;
+
+/** Inputs **/
+
 PIN 1 = IOSelect;
 PIN 2 = A8;
 PIN 3 = A9;
@@ -10,6 +22,9 @@ PIN 9 = IOStrobe;
 PIN 10 = MemOn;
 PIN 11 = A1_sw;
 PIN 13 = A2_sw;
+
+/** Outputs **/
+
 PIN 14 = CLK_374;
 PIN 15 = OE_374;
 PIN 16 = A10_out;
@@ -20,6 +35,9 @@ PIN 20 = A9_out;
 PIN 21 = WE;
 PIN 22 = WR_STR;
 PIN 23 = OE;
+
+/** Logic Equations **/
+
 OE = !RW;
 WE = !(F0 & !RW);
 OE_374 = !IOSelect;
