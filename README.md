@@ -8,16 +8,16 @@ it is important that at the end a write is performed to $CFFF so that the card i
 which is using the same address space.
 The bootloader is programmed in the highest 256 bytes of the chip. The boot loader is always available at addresses $CM00-$CMFF, where M = [slot number].
 The bootloader can also be seen at addresses $CF00-$CFFF of bank #FF.
-The image contains a ProDOS volume which is loaded by the boot loader. Additional firmware resdes in ProDOS Block $01.
+The image contains a ProDOS volume which is loaded by the boot loader. Additional firmware resides in ProDOS Block $01.
 The card requires the presence of 64kB AUX memory, otherwise will be read only.
 Recommended installation is on Slot 7. The boot loader has functionality that it captures the boot sequence of the computer and loads ProDOS.
 
-As of hardware version 2.3 a major design change was implemented - an addition of a static RAM chip onboard to be used as a write buffer. This eliminates the need to use the AUX memory as a write buffer and makes the card even more compatible - for instance to programs which must use the AUX memory, like A2Desktop or /RAM disk of ProDOS. The card can be written to even in a computer with only 64kB of RAM. This leads to a new firmware versions - 38 and above, which has also been reduced to 512 bytes only and now completly fits in block #001. The firmware is accessed only via the 256-byte Slot memory by means of bank switching. The RAM chip is accessed in the C800 memory space alongside the NVRAM chip by alternating R/W access with a programming switch - when writing is enabled for the RAM, reading is enabled for the NVRAM and vice versa. Note: SW v.38 and later are not backwards compatible with HW versions below 2.3.
+As of hardware version 2.3 a major design change was implemented - an addition of a static RAM chip onboard to be used as a write buffer. This eliminates the need to use the AUX memory as a write buffer and makes the card even more compatible - for instance to programs which must use the AUX memory, like A2Desktop or /RAM disk of ProDOS. The card can be written to even in a computer with only 64kB of RAM. This leads to a new firmware versions - 38 and above, which has also been reduced to 512 bytes only and now completely fits in block #001. The firmware is accessed only via the 256-byte Slot memory by means of bank switching. The RAM chip is accessed in the C800 memory space alongside the NVRAM chip by alternating R/W access with a programming switch - when writing is enabled for the RAM, reading is enabled for the NVRAM and vice versa. Note: SW v.38 and later are not backwards compatible with HW versions below 2.3.
 
 Copyright (c) 2023 Ralle Palaveev
 All rights reserved.
 
-Redistribution and use in source, binary, and manufactued forms, with or without
+Redistribution and use in source, binary, and manufactured forms, with or without
 modification, are permitted provided that the following conditions are met:
 1. Redistributions of source code and design files must retain the above copyright
    notice, this list of conditions and the following disclaimer.
