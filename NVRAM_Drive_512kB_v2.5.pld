@@ -39,12 +39,12 @@ PIN 23 = OE;
 /** Logic Equations **/
 
 OE = !RW;
-WE = !(F0 & !RW);
+WE = !(F0 & OE);
 OE_374 = !IOSelect;
 WR_STR = IOStrobe # RW;
-A8_out = (A8 & IOSelect) # (A1_sw & !IOSelect);
-A9_out = A9 # !IOSelect;
+A8_out = (A8 & IOSelect) # (A1_sw & OE_374);
+A9_out = A9 # OE_374;
 A10_out = A10 & IOSelect;
-CLK_374 = !(!RW & !DevSel & F0);
-CE_ROM = !(!IOSelect # (!(IOStrobe # MemOn) & (RW $ A2_sw)));
-CE_RAM = !(!(IOStrobe # MemOn) & !(RW $ A2_sw));
+CLK_374 = RW # DevSel # !F0;
+CE_ROM = IOSelect & (IOStrobe # MemOn # !(RW $ A2_sw));
+CE_RAM = IOStrobe # MemOn # (RW $ A2_sw);
